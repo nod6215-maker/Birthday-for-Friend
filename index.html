@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- BACKGROUND -->
+    <!-- ========================= -->
+
+    <div class="stars"></div>
+
+    <div class="petals"></div>
+
+    <div class="moon"></div>
+
+    <!-- ========================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+        <h1 class="title">
+            Happy Birthday Dishaa ❤️
+        </h1>
+
+        <p class="subtitle">
+            Tap Anywhere To Begin ✨
+        </p>
+
+        <img src="images/photo1.png" class="profile">
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- SLIDESHOW -->
+    <!-- ========================= -->
+
+    <section class="slideshow">
+
+        <!-- Story Progress -->
+        <div class="story-bar">
+
+            <div class="progress"></div>
+
+        </div>
+
+        <!-- Photos -->
+
+        <img src="images/photo1.png" class="slide active">
+
+        <img src="images/photo2.jpg" class="slide">
+
+        <img src="images/photo3.jpeg" class="slide">
+
+        <img src="images/photo4.jpeg" class="slide">
+
+        <img src="images/photo5.jpeg" class="slide">
+
+        <img src="images/photo6.jpg" class="slide">
+
+        <img src="images/photo7.jpeg" class="slide">
+        <div class="gallery-frame">
+
+    <div class="gallery-shadow"></div>
+
+    </div>
+
+        <!-- Caption -->
+
+        <h2 id="caption"></h2>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- ENVELOPE -->
+    <!-- ========================= -->
+
+    <section class="envelope-page">
+
+        <div class="envelope">
+
+            <div class="flap"></div>
+
+            <div class="letter-icon">
+
+                💌
+
+            </div>
+
+        </div>
+
+        <p class="tap-text">
+            Tap the Envelope 💖
+        </p>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- LETTER -->
+    <!-- ========================= -->
+
+    <section class="letter-page">
+
+        <div class="letter-card">
+
+            <h2>💖 For You 💖</h2>
+
+            <p id="message"></p>
+            <button id="nextBtn">
+        <span>Continue →</span>
+</button>
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FINAL PAGE -->
+    <!-- ========================= -->
+
+    <section class="final-page">
+
+        <h1>🎂 Happy Birthday 🎂</h1>
+
+        <p>
+            Wishing you happiness, success,
+            good health and countless smiles.
+        </p>
+
+        <canvas id="fireworks"></canvas>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- MUSIC -->
+    <!-- ========================= -->
+
+    <audio id="bgMusic" loop>
+
+        <source src="music/Husn.mp3.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

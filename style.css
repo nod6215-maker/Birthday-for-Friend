@@ -1,0 +1,1080 @@
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050510;
+    color:white;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body{
+    position:relative;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title{
+
+    font-size:clamp(36px,8vw,56px);
+
+    color:#ff6fb5;
+
+    text-shadow:
+        0 0 15px hotpink,
+        0 0 30px hotpink;
+
+    animation:titleGlow 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+    from{
+        text-shadow:
+            0 0 15px hotpink,
+            0 0 30px hotpink;
+    }
+
+    to{
+        text-shadow:
+            0 0 25px hotpink,
+            0 0 50px hotpink;
+    }
+
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle{
+
+    margin-top:18px;
+
+    color:#eeeeee;
+
+    font-size:18px;
+
+    animation:blink 2s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:.4;
+    }
+
+}
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile{
+
+    margin-top:35px;
+
+    width:min(45vw,210px);
+
+    height:min(45vw,210px);
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid hotpink;
+
+    box-shadow:
+        0 0 25px hotpink,
+        0 0 50px rgba(255,105,180,.4);
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================================
+   MOON
+========================================= */
+
+.moon{
+
+    position:fixed;
+
+    top:30px;
+
+    right:25px;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#FFF8DC;
+
+    box-shadow:
+        0 0 20px #FFF8DC,
+        0 0 40px rgba(255,248,220,.5);
+
+    z-index:1;
+
+}
+
+.moon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#050510;
+
+    left:18px;
+
+    top:-5px;
+
+}
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size:120px 120px,180px 180px;
+
+    opacity:.6;
+
+    animation:twinkle 5s ease-in-out infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.3;
+    }
+
+    to{
+        opacity:.8;
+    }
+
+}
+
+/* =========================================
+   PETALS CONTAINER
+========================================= */
+
+.petals{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+/* =========================================
+   SLIDESHOW
+========================================= */
+
+.slideshow{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#050510;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:20;
+
+}
+
+/* =========================================
+   STORY BAR
+========================================= */
+
+.story-bar{
+
+    position:absolute;
+
+    top:20px;
+
+    width:90%;
+
+    height:5px;
+
+    background:rgba(255,255,255,.2);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:white;
+
+    border-radius:10px;
+
+}
+
+/* =========================================
+   SLIDES
+========================================= */
+
+.slide{
+
+    position:absolute;
+
+    width:88%;
+
+    max-width:380px;
+
+    max-height:75vh;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    transition:1s;
+
+    box-shadow:
+        0 0 30px rgba(255,105,180,.4);
+
+}
+
+.slide.active{
+
+    opacity:1;
+
+    animation:kenburns 6s ease forwards;
+
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+#caption{
+
+    position:absolute;
+
+    bottom:50px;
+
+    width:90%;
+
+    text-align:center;
+
+    font-size:22px;
+
+    color:white;
+
+    text-shadow:0 0 15px hotpink;
+
+    animation:captionFade .8s;
+
+}
+
+@keyframes captionFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================
+   PHOTO ANIMATIONS
+========================================= */
+
+.zoom{
+
+    animation:zoomEffect 3s linear;
+
+}
+
+@keyframes zoomEffect{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.1);
+
+    }
+
+}
+
+.fade{
+
+    animation:fadeEffect 3s linear;
+
+}
+
+@keyframes fadeEffect{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.slide-left{
+
+    animation:slideLeft 3s ease;
+
+}
+
+@keyframes slideLeft{
+
+    from{
+
+        transform:translateX(100px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+.rotate{
+
+    animation:rotateEffect 3s ease;
+
+}
+
+@keyframes rotateEffect{
+
+    from{
+
+        transform:rotate(-6deg) scale(.9);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:rotate(0deg) scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .slide{
+
+        width:92%;
+
+        border-radius:18px;
+
+    }
+
+    #caption{
+
+        font-size:18px;
+
+        bottom:35px;
+
+    }
+
+}
+/* =========================================
+   ENVELOPE PAGE
+========================================= */
+
+.envelope-page{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#050510;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:30;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:260px;
+
+    height:170px;
+
+    background:#ff7ab8;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 25px rgba(255,105,180,.6);
+
+    animation:floatEnvelope 3s ease-in-out infinite;
+
+}
+
+@keyframes floatEnvelope{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* Top flap */
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:90px;
+
+    background:#ff5ca8;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+}
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+/* Letter */
+
+.letter{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:10px;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    height:140px;
+
+    background:#fffdf7;
+
+    border-radius:10px;
+
+    color:#333;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:60px;
+
+    transition:1s;
+
+}
+
+.envelope.open .letter{
+
+    transform:translate(-50%,-120px);
+
+}
+
+/* Tap Text */
+
+.tap-text{
+
+    margin-top:30px;
+
+    color:white;
+
+    font-size:20px;
+
+    animation:blink 2s infinite;
+
+}
+
+/* =========================================
+   LETTER PAGE
+========================================= */
+
+.letter-page{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050510;
+
+    padding:25px;
+
+    z-index:40;
+
+}
+
+.letter-card{
+
+    width:90%;
+
+    max-width:420px;
+
+    background:white;
+
+    color:#333;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 0 30px rgba(255,255,255,.2);
+
+    line-height:1.8;
+
+}
+
+.letter-card h2{
+
+    text-align:center;
+
+    color:#ff4d94;
+
+    margin-bottom:20px;
+
+}
+
+/* =========================================
+   FINAL PAGE
+========================================= */
+
+.final-page{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:#050510;
+
+    z-index:50;
+
+}
+
+.final-page h1{
+
+    font-size:42px;
+
+    color:#ff69b4;
+
+    text-shadow:0 0 20px hotpink;
+
+}
+
+.final-page p{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    width:90%;
+
+    max-width:500px;
+
+    color:#eee;
+
+}
+
+/* =========================================
+   FIREWORKS
+========================================= */
+
+#fireworks{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+}
+
+/* =========================================
+   FADE EFFECTS
+========================================= */
+
+.fade-in{
+
+    animation:fadeIn .8s ease forwards;
+
+}
+
+.fade-out{
+
+    animation:fadeOut .8s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .title{
+
+        font-size:40px;
+
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+    }
+
+    .profile{
+
+        width:170px;
+
+        height:170px;
+
+    }
+
+    .envelope{
+
+        width:220px;
+
+        height:150px;
+
+    }
+
+    .letter{
+
+        width:190px;
+
+        height:120px;
+
+    }
+
+    .letter-card{
+
+        padding:22px;
+
+    }
+
+    .final-page h1{
+
+        font-size:34px;
+
+    }
+
+    .final-page p{
+
+        font-size:18px;
+
+    }
+
+}
+.gallery-frame{
+
+    position:absolute;
+
+    width:92%;
+
+    max-width:390px;
+
+    aspect-ratio:4/5;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.5),
+
+        0 0 30px rgba(255,255,255,.08);
+
+}
+
+.slide{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.gallery-shadow{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.35)
+
+    );
+
+}
+/* ======================================
+   PREMIUM PHOTO CARD
+====================================== */
+
+.slide{
+
+    width:88% !important;
+
+    max-width:390px;
+
+    max-height:78vh;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 15px 50px rgba(0,0,0,.55),
+
+        0 0 40px rgba(255,255,255,.05);
+
+}
+
+/* Dark Gradient */
+
+.slide::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.35)
+
+    );
+
+}
+#caption{
+
+    position:absolute;
+
+    bottom:45px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.8s;
+
+}
+@keyframes kenburns{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.06);
+
+    }
+
+}
+#nextBtn{
+    display:none;
+    margin-top:30px;
+    padding:14px 35px;
+
+    background:#ff69b4;
+    color:#ffffff;
+
+    border:none;
+    border-radius:50px;
+
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    font-family:Arial, sans-serif;
+}
+
+#nextBtn span{
+    color:#ffffff !important;
+}
+
+#nextBtn:hover{
+    background:#ff4f9d;
+}
